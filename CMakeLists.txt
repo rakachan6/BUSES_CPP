@@ -34,7 +34,8 @@ enable_language(C ASM)
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
         App/I2C/I2C.cpp
-        App/Tim/tim.cpp)
+        App/Tim/tim.cpp
+        App/SWO/swo.c)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -54,6 +55,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
         App/I2C/
         App/Tim/
+        App/SWO/
 )
 
 # Add project symbols (macros)
